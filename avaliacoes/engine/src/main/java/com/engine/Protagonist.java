@@ -2,10 +2,20 @@ package com.engine;
 
 import javafx.scene.canvas.GraphicsContext;
 
-public class Protagonist extends Agent {
+public class Protagonist extends Agent implements Power {
+    private Bag bag;
 
-    public Protagonist(int posX, int posY, int height, int width, int speed, javafx.scene.image.Image image) {
+    public Protagonist(int posX, int posY, int height, int width, int speed, javafx.scene.image.Image image, Bag bag) {
         super(posX, posY, height, width, speed, image);
+        this.bag = new Bag();
+    }
+
+    public Bag getBag() { 
+        return bag; 
+    }
+
+    public void setBag(Bag bag) { 
+        this.bag = bag; 
     }
 
     @Override
@@ -47,6 +57,23 @@ public class Protagonist extends Agent {
     public void draw(GraphicsContext gc) {
         gc.drawImage(image, posX, posY, width, height);
     }
+
+    @Override
+    public void superKick() {
+        System.out.println("Protagonista executou um super chute!");
+    }
+    
+    @Override
+    public void megaPunch() {
+        System.out.println("Protagonista executou um mega soco!");
+    }
+    
+    @Override
+    public void fire() {
+        System.out.println("Protagonista lançou fogo!");
+    }
+
+    
 
     
     

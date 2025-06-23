@@ -3,9 +3,19 @@ package com.engine;
 import javafx.scene.canvas.GraphicsContext;
 
 public class Enemy extends Agent {
+    private Weapon weapon;
 
-    public Enemy(int posX, int posY, int height, int width, int speed, javafx.scene.image.Image image) {
+    public Enemy(int posX, int posY, int height, int width, int speed, javafx.scene.image.Image image, Weapon weapon) {
         super(posX, posY, height, width, speed, image);
+        this.weapon = weapon;
+    }
+
+    public Weapon getWeapon() { 
+        return weapon; 
+    }
+    
+    public void setWeapon(Weapon weapon) { 
+        this.weapon = weapon; 
     }
 
     @Override
