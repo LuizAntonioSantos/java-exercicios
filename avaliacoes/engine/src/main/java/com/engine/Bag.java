@@ -2,10 +2,20 @@ package com.engine;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ArrayList;
 
-public class Bag {
-    private String name;
-    private String descricao;
-    
+public class Bag extends Item {
+    private List<Item> items;
+
+    public Bag(String name, String descricao) {
+        super(name, descricao);
+        this.items = new ArrayList<>();
+    }
+
+    public void addItem(Item item) {
+        items.add(item);
+    }
+
+    public List<Item> getItems() {
+        return items;
+    }  
 }
