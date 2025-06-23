@@ -2,6 +2,7 @@ package com.engine;
 
 import javafx.scene.image.Image;
 import javafx.scene.canvas.GraphicsContext;
+import java.util.List;
 
 public abstract class Agent {
     protected int posX;
